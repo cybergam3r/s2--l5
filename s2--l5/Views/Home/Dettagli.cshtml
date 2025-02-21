@@ -1,0 +1,28 @@
+﻿@model s2__l5.Entities.Articolo
+
+@{
+    ViewData["Title"] = "Dettagli Articolo";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Dettagli di @Html.DisplayFor(model => model.Nome)</h1>
+
+    <div class="row text-center">
+        <div class="col-12">
+            @{
+                string imgPath = Model.ImgCopertina == null ? "~/immagini/default.jpg" : $"~/immagini/{Model.Id}.jpg";
+            }
+            <img src="@Url.Content(imgPath)" alt="Immagine Copertina" class="img-fluid" style="max-width: 300px;" />
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <p class="fs-2 text-center">Prezzo: @Html.DisplayFor(model => model.Prezzo) $</p>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-secondary btn-secondary-gradient text-white" asp-area="" asp-controller="Home" asp-action="Articoli">Tutti gli articoli</a>
+    </div>
+</div>

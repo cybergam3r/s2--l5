@@ -1,0 +1,105 @@
+﻿@model IEnumerable<s2__l5.Entities.Articolo>
+
+@{
+    ViewData["Title"] = "Articoli";
+}
+
+<div class="container mt-5">
+    @if (Model.Any())
+    {
+        <h1 class="text-center mb-4">Articoli</h1>
+
+        <table class="table table-hover table-bordered table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.Prezzo)</th>
+                    <th>Immagine Copertina</th>
+                    <th>Immagine Prodotto 1</th>
+                    <th>Immagine Prodotto 2</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.Prezzo) $
+                        </td>
+                        <td class="align-middle text-center">
+                            @if (item.ImgCopertina == null)
+                            {
+                                <img src="~/immagini/default.jpg" alt="Immagine Copertina" class="img-thumbnail img-hover img-fixed" />
+                            }
+                            else
+                            {
+                                string imgPath = $"~/immagini/{item.Id}.jpg";
+                                <img src="@Url.Content(imgPath)" alt="Immagine Copertina" class="img-thumbnail img-hover img-fixed" />
+                            }
+                        </td>
+                        <td class="align-middle text-center">
+                            @if (item.ImgProdotto1 == null)
+                            {
+                                <img src="~/immagini/default2.jpg" alt="Immagine Prodotto 1" class="img-thumbnail img-hover img-fixed" />
+                            }
+                            else
+                            {
+                                string imgPath = $"~/immagini/{item.Id}_1.jpg";
+                                <img src="@Url.Content(imgPath)" alt="Immagine Prodotto 1" class="img-thumbnail img-hover img-fixed" />
+                            }
+                        </td>
+                        <td class="align-middle text-center">
+                            @if (item.ImgProdotto2 == null)
+                            {
+                                <img src="~/immagini/default3.jpg" alt="Immagine Prodotto 2" class="img-thumbnail img-hover img-fixed" />
+                            }
+                            else
+                            {
+                                string imgPath = $"~/immagini/{item.Id}_2.jpg";
+                                <img src="@Url.Content(imgPath)" alt="Immagine Prodotto 2" class="img-thumbnail img-hover img-fixed" />
+                            }
+                        </td>
+                        <td class="align-middle text-center">
+                            @Html.ActionLink("Dettagli", "Dettagli", new { id = item.Id }, new { @class = "btn btn-warning mt-1" })
+                            <form asp-controller="Home" asp-action="Delete" class="d-inline">
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button class="btn btn-danger mt-2" type="submit">Cancella</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-lg mb-3 btn-success" asp-area="" asp-controller="Home" asp-action="CreaArticoli">Vendi qualcos'altro</a>
+        </div>
+    }
+    else
+    {
+        <div class="text-center">
+            <p class="fs-2">Non c'è ancora nessun prodotto, ci spiace.</p>
+            <a class="btn btn-lg mb-3 btn-success" asp-area="" asp-controller="Home" asp-action="CreaArticoli">Vendi qualcosa tu</a>
+        </div>
+    }
+</div>
+
+<style>
+    .img-hover {
+        transition: transform 0.3s ease;
+    }
+
+        .img-hover:hover {
+            transform: scale(1.1);
+        }
+
+    .img-fixed {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+</style>
+

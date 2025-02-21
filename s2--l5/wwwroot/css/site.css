@@ -1,0 +1,138 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    background-color: #5d5dd8;
+    opacity: 1;
+    background: linear-gradient(135deg, #51515155 25%, transparent 25%) -19px 0/ 38px 38px, linear-gradient(225deg, #515151 25%, transparent 25%) -19px 0/ 38px 38px, linear-gradient(315deg, #51515155 25%, transparent 25%) 0px 0/ 38px 38px, linear-gradient(45deg, #515151 25%, #5d5dd8 25%) 0px 0/ 38px 38px;
+    margin-bottom: 60px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.personalbtn {
+    background: linear-gradient(to right, #007bff, #004085);
+    color: white;
+}
+
+.titolo {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem 1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    color: white;
+}
+
+.sottotitolo {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.titolo h1 {
+    color: white;
+}
+
+.titolo p.lead {
+    color: #dcdcdc;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+        color: white;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+        color: white;
+    }
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+        color: white;
+    }
+
+.row h2 {
+    color: white;
+}
+
+.row p {
+    color: #dcdcdc;
+}
+
+.mt-5.text-center h2 {
+    color: darkred;
+}
+
+.sellbtn {
+    background: linear-gradient(to right, #ba950b, #7c7907);
+    color: white;
+}
+
+.btn-primary-gradient {
+    background: linear-gradient(to right, #007bff, #004085);
+    color: white;
+}
+
+.btn-secondary-gradient {
+    background: linear-gradient(to right, #714141, #374a36 );
+    color: white;
+}
+
+.btn-success-gradient {
+    background: linear-gradient(to right, #857e52 , #218838);
+    color: white;
+}
+
+.btn-warning-gradient {
+    background: linear-gradient(to right, #ffc107, #d39e00);
+    color: white;
+}
+
+.btn-danger-gradient {
+    background: linear-gradient(to right, #dc3545, #bd2130);
+    color: white;
+}
+
+.btn-info-gradient {
+    background: linear-gradient(to right, #17a2b8, #117a8b);
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+}

@@ -1,0 +1,67 @@
+﻿@model s2__l5.Entities.Articolo
+
+@{
+    ViewData["Title"] = "Crea articoli";
+}
+
+<h1 class="mb-4 text-center text-white">Crea Articolo</h1>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card shadow-sm bg-dark text-white">
+            <div class="card-body">
+                <form asp-action="CreaArticoli" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Nome" class="form-label">Nome</label>
+                        <input asp-for="Nome" class="form-control bg-dark text-white" />
+                        <span asp-validation-for="Nome" class="text-danger fs-5 fw-bold"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Prezzo" class="form-label">Prezzo</label>
+                        <input asp-for="Prezzo" type="number" class="form-control bg-dark text-white" />
+                        <span asp-validation-for="Prezzo" class="text-danger fs-5 fw-bold"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Descrizione" class="form-label">Descrizione</label>
+                        <textarea asp-for="Descrizione" class="form-control bg-dark text-white" rows="5"></textarea>
+                        <span asp-validation-for="Descrizione" class="text-danger fs-5 fw-bold"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="ImgCopertina" class="form-label">Aggiungi un'immagine principale</label>
+                        <input asp-for="ImgCopertina" type="file" class="form-control bg-dark text-white" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="ImgProdotto1" class="form-label">Aggiungi una seconda immagine</label>
+                        <input asp-for="ImgProdotto1" type="file" class="form-control bg-dark text-white" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="ImgProdotto2" class="form-label">Aggiungi una terza immagine</label>
+                        <input asp-for="ImgProdotto2" type="file" class="form-control bg-dark text-white" />
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-success btn-lg mt-3">Crea Articolo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-action="Articoli" class="btn btn-secondary btn-lg">Torna alla lista degli Articoli</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
